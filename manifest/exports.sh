@@ -1,0 +1,1 @@
+﻿export APP_MANIFEST_PORT=1111

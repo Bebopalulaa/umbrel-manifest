@@ -1,0 +1,40 @@
+﻿manifestVersion: 1.1
+id: manifest
+name: Manifest
+tagline: The ridiculously simple JavaScript backend
+icon: https://manifest.build/logo.png
+category: developer
+version: "1.1.0"
+port: 1111
+path: ""
+description: >-
+  Manifest is a complete backend that fits in one YAML file. It gives you
+  an instant API, an admin panel, and a database with almost zero configuration.
+
+
+  With Manifest you can:
+  - Define your entire data model in a single YAML file
+  - Get a full REST API generated automatically
+  - Access a built-in admin panel to manage your data
+  - Use SQLite for a zero-maintenance, file-based database
+
+
+  Perfect for indie developers, small projects, and anyone who wants a
+  self-hosted backend without the complexity. Manifest runs entirely on your
+  Umbrel and keeps all your data local.
+
+
+  ## Getting Started
+
+  After installation, open the app to access the Manifest admin panel.
+  Your API is immediately available at the same address.
+
+developer: Manifest
+website: https://manifest.build
+dependencies: []
+repo: https://github.com/mnfst/manifest
+support: https://github.com/mnfst/manifest/issues
+gallery: []
+releaseNotes: ""
+submitter: Arthur Rudloft
+submission: https://github.com/arthu/umbrel-manifest
