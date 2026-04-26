@@ -3,12 +3,14 @@ version: "3.7"
 services:
   app_proxy:
     image: getumbrel/app-proxy:1.0.0
+    container_name: arthur-manifest_app_proxy_1
     environment:
       APP_HOST: arthur-manifest_app_1
       APP_PORT: 2099
 
   app:
     image: manifestdotbuild/manifest:latest
+    container_name: arthur-manifest_app_1
     init: true
     restart: on-failure
     stop_grace_period: 1m
@@ -26,6 +28,7 @@ services:
 
   db:
     image: postgres:16-alpine
+    container_name: arthur-manifest_db_1
     restart: on-failure
     stop_grace_period: 1m
     environment:
