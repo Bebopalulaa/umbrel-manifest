@@ -19,6 +19,8 @@ services:
       PORT: 2099
       DATABASE_URL: "postgresql://manifest:${APP_PASSWORD}@arthur-manifest_db_1:5432/manifest"
       BETTER_AUTH_SECRET: "${APP_MANIFEST_BETTER_AUTH_SECRET}"
+      BETTER_AUTH_URL: "http://umbrel.local:2099"
+      BETTER_AUTH_TRUSTED_ORIGINS: "http://umbrel.local:2099,http://umbrel.tail9779a.ts.net:2099,http://localhost:2099,http://192.168.1.10:2099"
     volumes:
       - "${APP_DATA_DIR}/data:/app/data"
     networks:
