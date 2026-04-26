@@ -1,5 +1,5 @@
 manifestVersion: 1.1
-id: manifest
+id: arthur-umbrel-apps-manifest
 name: Manifest
 tagline: The ridiculously simple JavaScript backend
 icon: https://manifest.build/logo.png
