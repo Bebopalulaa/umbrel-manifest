@@ -1,28 +1,15 @@
-﻿version: "3.7"
+version: "3.7"
 
 services:
   app_proxy:
     environment:
-      APP_HOST: manifest_server_1
+      APP_HOST: arthur-umbrel-apps-manifest_server_1
       APP_PORT: 1111
-    container_name: manifest_app_proxy_1
 
   server:
     image: ghcr.io/mnfst/manifest:latest
+    user: "1000:1000"
     init: true
     restart: on-failure
-    stop_grace_period: 1m
-    environment:
-      - NODE_ENV=production
     volumes:
       - "${APP_DATA_DIR}/data:/app/backend/db"
-    container_name: manifest_server_1
-    networks:
-      default:
-        aliases:
-          - manifest_server_1
-
-networks:
-  default:
-    name: umbrel_main_network
-    external: true

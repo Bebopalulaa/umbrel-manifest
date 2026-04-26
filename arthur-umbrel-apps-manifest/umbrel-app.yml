@@ -1,9 +1,9 @@
-manifestVersion: 1.1
+manifestVersion: 1
 id: arthur-umbrel-apps-manifest
 name: Manifest
 tagline: The ridiculously simple JavaScript backend
 icon: https://manifest.build/logo.png
-category: developer
+category: Development
 version: "1.1.0"
 port: 1111
 path: ""
@@ -34,7 +34,10 @@ website: https://manifest.build
 dependencies: []
 repo: https://github.com/mnfst/manifest
 support: https://github.com/mnfst/manifest/issues
-gallery: []
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
 releaseNotes: ""
+defaultUsername: ""
+defaultPassword: ""
 submitter: Arthur Rudloft
 submission: https://github.com/arthu/umbrel-manifest
