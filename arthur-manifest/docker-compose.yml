@@ -18,7 +18,7 @@ services:
       NODE_ENV: production
       PORT: 2099
       DATABASE_URL: "postgresql://manifest:${APP_PASSWORD}@arthur-manifest_db_1:5432/manifest"
-      BETTER_AUTH_SECRET: "${APP_PASSWORD}"
+      BETTER_AUTH_SECRET: "${APP_MANIFEST_BETTER_AUTH_SECRET}"
     volumes:
       - "${APP_DATA_DIR}/data:/app/data"
     networks:
