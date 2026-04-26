@@ -8,34 +8,38 @@ services:
 
   app:
     image: manifestdotbuild/manifest:latest
+    init: true
     restart: on-failure
     stop_grace_period: 1m
-    depends_on:
-      db:
-        condition: service_healthy
     environment:
       NODE_ENV: production
       PORT: 2099
-      DATABASE_URL: postgresql://manifest:${APP_PASSWORD}@arthur-manifest_db_1:5432/manifest
-      BETTER_AUTH_SECRET: ${APP_SEED}
-      BETTER_AUTH_URL: http://${APP_DOMAIN}
-      AUTO_MIGRATE: "true"
+      DATABASE_URL: "postgresql://manifest:${APP_PASSWORD}@arthur-manifest_db_1:5432/manifest"
+      BETTER_AUTH_SECRET: "${APP_PASSWORD}"
     volumes:
-      - ${APP_DATA_DIR}/data:/app/data
+      - "${APP_DATA_DIR}/data:/app/data"
+    networks:
+      default:
+        aliases:
+          - arthur-manifest_app_1
 
   db:
     image: postgres:16-alpine
-    user: "1000:1000"
     restart: on-failure
     stop_grace_period: 1m
     environment:
       POSTGRES_USER: manifest
-      POSTGRES_PASSWORD: ${APP_PASSWORD}
+      POSTGRES_PASSWORD: "${APP_PASSWORD}"
       POSTGRES_DB: manifest
+      PGDATA: /var/lib/postgresql/data/pgdata
     volumes:
-      - ${APP_DATA_DIR}/db:/var/lib/postgresql/data
-    healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U manifest"]
-      interval: 10s
-      timeout: 5s
-      retries: 5
+      - "${APP_DATA_DIR}/db:/var/lib/postgresql/data"
+    networks:
+      default:
+        aliases:
+          - arthur-manifest_db_1
+
+networks:
+  default:
+    name: umbrel_main_network
+    external: true
