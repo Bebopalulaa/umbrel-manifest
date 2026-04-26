@@ -18,7 +18,7 @@ services:
       NODE_ENV: production
       PORT: 2099
       DATABASE_URL: "postgresql://manifest:${APP_PASSWORD}@arthur-manifest_db_1:5432/manifest"
-      BETTER_AUTH_SECRET: "${APP_SEED}"
+      BETTER_AUTH_SECRET: "${APP_PASSWORD}"
     volumes:
       - "${APP_DATA_DIR}/data:/app/data"
     networks:
@@ -28,7 +28,6 @@ services:
 
   db:
     image: postgres:16-alpine
-    user: "1000:1000"
     restart: on-failure
     stop_grace_period: 1m
     environment:
