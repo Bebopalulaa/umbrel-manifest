@@ -1,24 +1,36 @@
 manifestVersion: 1
 id: arthur-manifest
-name: Manifest
-tagline: The ridiculously simple JavaScript backend
-icon: https://manifest.build/logo.png
 category: developer
+name: Manifest
 version: "1.1.0"
-port: 2099
+tagline: The ridiculously simple JavaScript backend
+icon: https://raw.githubusercontent.com/Bebopalulaa/umbrel-manifest/main/arthur-manifest/icon.svg
 description: >-
-  Manifest is a complete backend that fits in a single YAML file.
-  Define your entities, relationships, and validations declaratively
-  and get an instant REST API, admin panel, and database.
-developer: Manifest
-website: https://manifest.build
-submitter: Arthur Rudloft
-submission: https://github.com/Bebopalulaa/umbrel-manifest
-repo: https://github.com/mnfst/manifest
-support: https://github.com/mnfst/manifest/issues
-gallery:
-  - https://i.imgur.com/yyVG0Jb.jpeg
+  Manifest is a complete backend that fits in a single YAML file. Define your
+  entities, relationships, and validations declaratively and get an instant
+  REST API, an admin panel, and a database with zero configuration.
+
+
+  Perfect for indie developers, prototypes, and small projects. Manifest runs
+  entirely on your Umbrel and keeps all your data local.
+
+
+  ## Getting Started
+
+  After installation, open the app to access the Manifest dashboard. The first
+  account you create becomes the admin.
 releaseNotes: >-
   Initial release of Manifest on Umbrel.
+developer: Manifest
+website: https://manifest.build
 dependencies: []
+repo: https://github.com/mnfst/manifest
+support: https://github.com/mnfst/manifest/issues
+port: 2099
+gallery:
+  - https://i.imgur.com/yyVG0Jb.jpeg
 path: ""
+defaultUsername: ""
+defaultPassword: ""
+submitter: Arthur Rudloft
+submission: https://github.com/Bebopalulaa/umbrel-manifest
