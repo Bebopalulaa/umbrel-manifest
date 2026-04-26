@@ -3,13 +3,51 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: arthur-manifest_server_1
-      APP_PORT: 1111
+      APP_HOST: arthur-manifest_app_1
+      APP_PORT: 2099
 
-  server:
-    image: ghcr.io/mnfst/manifest:latest
-    user: "1000:1000"
+  app:
+    image: manifestdotbuild/manifest:latest
     init: true
     restart: on-failure
+    stop_grace_period: 1m
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      NODE_ENV: production
+      PORT: 2099
+      DATABASE_URL: "postgresql://manifest:${APP_PASSWORD}@arthur-manifest_db_1:5432/manifest"
+      BETTER_AUTH_SECRET: "${APP_SEED}"
     volumes:
-      - "${APP_DATA_DIR}/data:/app/backend/db"
+      - "${APP_DATA_DIR}/data:/app/data"
+    networks:
+      default:
+        aliases:
+          - arthur-manifest_app_1
+
+  db:
+    image: postgres:16-alpine
+    user: "1000:1000"
+    restart: on-failure
+    stop_grace_period: 1m
+    environment:
+      POSTGRES_USER: manifest
+      POSTGRES_PASSWORD: "${APP_PASSWORD}"
+      POSTGRES_DB: manifest
+    volumes:
+      - "${APP_DATA_DIR}/db:/var/lib/postgresql/data"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U manifest"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    networks:
+      default:
+        aliases:
+          - arthur-manifest_db_1
+
+networks:
+  default:
+    name: umbrel_main_network
+    external: true

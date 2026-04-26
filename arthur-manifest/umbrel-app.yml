@@ -5,7 +5,7 @@ tagline: The ridiculously simple JavaScript backend
 icon: https://manifest.build/logo.png
 category: developer
 version: "1.1.0"
-port: 1111
+port: 2099
 description: >-
   Manifest is a complete backend that fits in a single YAML file.
   Define your entities, relationships, and validations declaratively
