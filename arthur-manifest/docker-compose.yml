@@ -3,7 +3,7 @@ version: "3.7"
 services:
   app_proxy:
     environment:
-      APP_HOST: arthur-umbrel-apps-manifest_server_1
+      APP_HOST: arthur-manifest_server_1
       APP_PORT: 1111
 
   server:
