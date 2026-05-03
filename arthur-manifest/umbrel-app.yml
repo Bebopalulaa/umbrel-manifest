@@ -2,25 +2,25 @@ manifestVersion: 1
 id: arthur-manifest
 category: developer
 name: Manifest
-version: "1.1.0"
-tagline: The ridiculously simple JavaScript backend
+version: "1.2.0"
+tagline: Smart model routing for agents — cut AI costs up to 70%
 icon: https://raw.githubusercontent.com/Bebopalulaa/umbrel-manifest/main/arthur-manifest/icon.svg
 description: >-
-  Manifest is a complete backend that fits in a single YAML file. Define your
-  entities, relationships, and validations declaratively and get an instant
-  REST API, an admin panel, and a database with zero configuration.
+  Manifest is a smart model router for AI agents and applications that redirects
+  each query to the right model, saving up to 70% in AI costs.
 
 
-  Perfect for indie developers, prototypes, and small projects. Manifest runs
-  entirely on your Umbrel and keeps all your data local.
+  Mix your providers: API keys, subscriptions, local models, and custom providers.
+  Track every dollar, set up notifications and limits, and fallback on different
+  models when queries fail.
 
-
-  ## Getting Started
 
   After installation, open the app to access the Manifest dashboard. The first
   account you create becomes the admin.
 releaseNotes: >-
-  Initial release of Manifest on Umbrel.
+  Updated Manifest to latest version with smart model routing, cost tracking,
+  and support for 16+ providers including OpenAI, Anthropic, Google, xAI,
+  DeepSeek, Mistral, and more.
 developer: Manifest
 website: https://manifest.build
 dependencies: []

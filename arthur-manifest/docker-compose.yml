@@ -2,14 +2,14 @@ version: "3.7"
 
 services:
   app_proxy:
-    image: getumbrel/app-proxy:1.0.0
+    image: getumbrel/app-proxy:1.7.0
     container_name: arthur-manifest_app_proxy_1
     environment:
       APP_HOST: arthur-manifest_app_1
       APP_PORT: 2099
 
   app:
-    image: manifestdotbuild/manifest:latest
+    image: manifestdotbuild/manifest:6.0.1
     container_name: arthur-manifest_app_1
     init: true
     restart: on-failure
